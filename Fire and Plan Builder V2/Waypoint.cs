@@ -14,6 +14,7 @@ namespace Fire_and_Plan_Builder_V2
         public Waypoint(double lat, double lon) : base("Waypoint", lat,lon)
         {
             marker = new GMarkerGoogle(new PointLatLng(lat, lon), GMarkerGoogleType.green);
+            //solo un test
         }
 
         public Waypoint(Waypoint w) : this(w.lat, w.lon) { }
