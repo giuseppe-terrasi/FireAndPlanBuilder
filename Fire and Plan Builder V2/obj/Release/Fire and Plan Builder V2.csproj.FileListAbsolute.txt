@@ -37,3 +37,6 @@ C:\Users\Axcent\Downloads\Github\FireAndPlanBuilder\Fire and Plan Builder V2\obj
 C:\Users\Axcent\Downloads\Github\FireAndPlanBuilder\Fire and Plan Builder V2\obj\Release\Fire_and_Plan_Builder_V2.InfoForm.resources
 C:\Users\Axcent\Downloads\Github\FireAndPlanBuilder\Fire and Plan Builder V2\obj\Release\Fire_and_Plan_Builder_V2.Properties.Resources.resources
 C:\Users\Axcent\Downloads\Github\FireAndPlanBuilder\Fire and Plan Builder V2\obj\Release\Fire and Plan Builder V2.csproj.GenerateResource.Cache
+D:\Progetti Visual Studio\Github\FireAndPlanBuilder\Fire and Plan Builder V2\bin\Release\Fire and Plan Builder V2.exe.config
+D:\Progetti Visual Studio\Github\FireAndPlanBuilder\Fire and Plan Builder V2\obj\Release\Fire and Plan Builder V2.exe
+D:\Progetti Visual Studio\Github\FireAndPlanBuilder\Fire and Plan Builder V2\obj\Release\Fire and Plan Builder V2.pdb
