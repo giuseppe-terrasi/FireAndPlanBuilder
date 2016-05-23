@@ -859,10 +859,45 @@ namespace Fire_and_Plan_Builder_V2
             speedCB.SelectedItem = "N";
             speedTB.Text = "170";
             pobTB.Text = "2";
+            equip1TB.Text = "SDFUHY";
+            equip2TB.Text = "S";
+            enduranceTB.Text = "04:30";
 
             switch (type)
             {
+                case "ADT":
+                case "ADM":
+                case "ADC":
+                case "ADI":
+                case "ADS":
+                    aircaftIdTB.Text = "IDPC";
+                    routeTB.Text = @"RMK/OAT/TRAINING OPAREA/[xxx] OPR/ITVVF //WWW CANADAIRVIRTUALORG//";
+                    break;
                 case "AIB":
+                case "RIC":
+                    aircaftIdTB.Text = "CANADxx";
+                    routeTB.Text = @"STS/FFR OPAREA/[xxx] REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG// CS/CANADAIR";
+                    break;
+                case "SAR":
+                    aircaftIdTB.Text = "CANADxx";
+                    routeTB.Text = @"STS/SAR OPAREA/[xxx] REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG// CS/CANADAIR";
+                    break;
+                case "VCS":
+                    aircaftIdTB.Text = "CANADxx";
+                    routeTB.Text = @"RMK/OAT/ENVIPATROL REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG// CS/CANADAIR";
+                    break;
+                case "TRO":
+                    aircaftIdTB.Text = "IDPC";
+                    routeTB.Text = @"RMK/OAT/LOGISTIC REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG//";
+                    break;
+                case "LOG":
+                    aircaftIdTB.Text = "CANADxx";
+                    routeTB.Text = @"RMK/OAT/LOGISTIC REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG// CS/CANADAIR";
+                    break;
+                case "TRM":
+                case "TEC":
+                    aircaftIdTB.Text = "IDPC";
+                    routeTB.Text = @"RMK/OAT/FERRY REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG//";
                     break;
             }
         }
