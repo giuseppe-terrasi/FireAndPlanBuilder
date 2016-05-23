@@ -849,5 +849,22 @@ namespace Fire_and_Plan_Builder_V2
 
             info.ShowDialog();
         }
+
+        private void LoadPanelSection(string type)
+        {
+            flightRulesCB.SelectedItem = "V";
+            tofCB.SelectedItem = "X";
+            typeOfAircraftTB.Text = "CL2T";
+            wakeCB.SelectedItem = "L";
+            speedCB.SelectedItem = "N";
+            speedTB.Text = "170";
+            pobTB.Text = "2";
+
+            switch (type)
+            {
+                case "AIB":
+                    break;
+            }
+        }
     }
 }

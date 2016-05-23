@@ -82,15 +82,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.impostaCompilatoreBGLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aggiungiNuovoEffettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rbTEC = new System.Windows.Forms.RadioButton();
             this.rbTRM = new System.Windows.Forms.RadioButton();
@@ -147,11 +138,20 @@
             this.label19 = new System.Windows.Forms.Label();
             this.numberTB = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.typeOfFlightTB = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.flightRulesCB = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.aircaftIdTB = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impostaCompilatoreBGLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aggiungiNuovoEffettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tofCB = new System.Windows.Forms.ComboBox();
             this.mainTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -165,8 +165,8 @@
             this.panel3.SuspendLayout();
             this.panelOverIncendio.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -762,6 +762,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tofCB);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.inviaBtn);
             this.tabPage2.Controls.Add(this.pulisciBtn);
@@ -805,7 +806,6 @@
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.numberTB);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.typeOfFlightTB);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.flightRulesCB);
             this.tabPage2.Controls.Add(this.label16);
@@ -817,79 +817,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Piano di volo";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.aggiungiNuovoEffettoToolStripMenuItem,
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuovoToolStripMenuItem,
-            this.apriToolStripMenuItem,
-            this.impostaCompilatoreBGLToolStripMenuItem,
-            this.esciToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // nuovoToolStripMenuItem
-            // 
-            this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
-            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.nuovoToolStripMenuItem.Text = "Nuovo";
-            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
-            // 
-            // apriToolStripMenuItem
-            // 
-            this.apriToolStripMenuItem.Name = "apriToolStripMenuItem";
-            this.apriToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.apriToolStripMenuItem.Text = "Apri";
-            this.apriToolStripMenuItem.Click += new System.EventHandler(this.apriToolStripMenuItem_Click);
-            // 
-            // impostaCompilatoreBGLToolStripMenuItem
-            // 
-            this.impostaCompilatoreBGLToolStripMenuItem.Name = "impostaCompilatoreBGLToolStripMenuItem";
-            this.impostaCompilatoreBGLToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.impostaCompilatoreBGLToolStripMenuItem.Text = "Imposta compilatore BGL";
-            this.impostaCompilatoreBGLToolStripMenuItem.Click += new System.EventHandler(this.impostaCompilatoreBGLToolStripMenuItem_Click);
-            // 
-            // esciToolStripMenuItem
-            // 
-            this.esciToolStripMenuItem.Name = "esciToolStripMenuItem";
-            this.esciToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.esciToolStripMenuItem.Text = "Esci";
-            this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
-            // 
-            // aggiungiNuovoEffettoToolStripMenuItem
-            // 
-            this.aggiungiNuovoEffettoToolStripMenuItem.Name = "aggiungiNuovoEffettoToolStripMenuItem";
-            this.aggiungiNuovoEffettoToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.aggiungiNuovoEffettoToolStripMenuItem.Text = "Gestisci Effetti";
-            this.aggiungiNuovoEffettoToolStripMenuItem.Click += new System.EventHandler(this.aggiungiNuovoEffettoToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.infoToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
-            this.toolStripMenuItem1.Text = "?";
-            // 
-            // infoToolStripMenuItem
-            // 
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
-            this.infoToolStripMenuItem.Text = "Info";
-            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // panel4
             // 
@@ -1219,6 +1146,12 @@
             // leveCB
             // 
             this.leveCB.FormattingEnabled = true;
+            this.leveCB.Items.AddRange(new object[] {
+            "F",
+            "A",
+            "S",
+            "M",
+            "VFR"});
             this.leveCB.Location = new System.Drawing.Point(294, 193);
             this.leveCB.Name = "leveCB";
             this.leveCB.Size = new System.Drawing.Size(49, 21);
@@ -1243,6 +1176,10 @@
             // speedCB
             // 
             this.speedCB.FormattingEnabled = true;
+            this.speedCB.Items.AddRange(new object[] {
+            "N",
+            "M",
+            "K"});
             this.speedCB.Location = new System.Drawing.Point(89, 193);
             this.speedCB.Name = "speedCB";
             this.speedCB.Size = new System.Drawing.Size(49, 21);
@@ -1340,6 +1277,10 @@
             // wakeCB
             // 
             this.wakeCB.FormattingEnabled = true;
+            this.wakeCB.Items.AddRange(new object[] {
+            "L",
+            "M",
+            "H"});
             this.wakeCB.Location = new System.Drawing.Point(422, 105);
             this.wakeCB.Name = "wakeCB";
             this.wakeCB.Size = new System.Drawing.Size(61, 21);
@@ -1386,13 +1327,6 @@
             this.label18.TabIndex = 53;
             this.label18.Text = "type of flight";
             // 
-            // typeOfFlightTB
-            // 
-            this.typeOfFlightTB.Location = new System.Drawing.Point(445, 70);
-            this.typeOfFlightTB.Name = "typeOfFlightTB";
-            this.typeOfFlightTB.Size = new System.Drawing.Size(100, 20);
-            this.typeOfFlightTB.TabIndex = 52;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -1405,6 +1339,11 @@
             // flightRulesCB
             // 
             this.flightRulesCB.FormattingEnabled = true;
+            this.flightRulesCB.Items.AddRange(new object[] {
+            "I",
+            "V",
+            "Y",
+            "Z"});
             this.flightRulesCB.Location = new System.Drawing.Point(306, 70);
             this.flightRulesCB.Name = "flightRulesCB";
             this.flightRulesCB.Size = new System.Drawing.Size(63, 21);
@@ -1425,6 +1364,93 @@
             this.aircaftIdTB.Name = "aircaftIdTB";
             this.aircaftIdTB.Size = new System.Drawing.Size(100, 20);
             this.aircaftIdTB.TabIndex = 48;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aggiungiNuovoEffettoToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(889, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovoToolStripMenuItem,
+            this.apriToolStripMenuItem,
+            this.impostaCompilatoreBGLToolStripMenuItem,
+            this.esciToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // nuovoToolStripMenuItem
+            // 
+            this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
+            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.nuovoToolStripMenuItem.Text = "Nuovo";
+            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
+            // 
+            // apriToolStripMenuItem
+            // 
+            this.apriToolStripMenuItem.Name = "apriToolStripMenuItem";
+            this.apriToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.apriToolStripMenuItem.Text = "Apri";
+            this.apriToolStripMenuItem.Click += new System.EventHandler(this.apriToolStripMenuItem_Click);
+            // 
+            // impostaCompilatoreBGLToolStripMenuItem
+            // 
+            this.impostaCompilatoreBGLToolStripMenuItem.Name = "impostaCompilatoreBGLToolStripMenuItem";
+            this.impostaCompilatoreBGLToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.impostaCompilatoreBGLToolStripMenuItem.Text = "Imposta compilatore BGL";
+            this.impostaCompilatoreBGLToolStripMenuItem.Click += new System.EventHandler(this.impostaCompilatoreBGLToolStripMenuItem_Click);
+            // 
+            // esciToolStripMenuItem
+            // 
+            this.esciToolStripMenuItem.Name = "esciToolStripMenuItem";
+            this.esciToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.esciToolStripMenuItem.Text = "Esci";
+            this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
+            // 
+            // aggiungiNuovoEffettoToolStripMenuItem
+            // 
+            this.aggiungiNuovoEffettoToolStripMenuItem.Name = "aggiungiNuovoEffettoToolStripMenuItem";
+            this.aggiungiNuovoEffettoToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.aggiungiNuovoEffettoToolStripMenuItem.Text = "Gestisci Effetti";
+            this.aggiungiNuovoEffettoToolStripMenuItem.Click += new System.EventHandler(this.aggiungiNuovoEffettoToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.infoToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
+            this.toolStripMenuItem1.Text = "?";
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            // 
+            // tofCB
+            // 
+            this.tofCB.FormattingEnabled = true;
+            this.tofCB.Items.AddRange(new object[] {
+            "S",
+            "N",
+            "G",
+            "M",
+            "X"});
+            this.tofCB.Location = new System.Drawing.Point(445, 70);
+            this.tofCB.Name = "tofCB";
+            this.tofCB.Size = new System.Drawing.Size(75, 21);
+            this.tofCB.TabIndex = 96;
             // 
             // Form1
             // 
@@ -1462,10 +1488,10 @@
             this.panelOverIncendio.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1591,11 +1617,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox numberTB;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox typeOfFlightTB;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox flightRulesCB;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox aircaftIdTB;
+        private System.Windows.Forms.ComboBox tofCB;
     }
 }
 
