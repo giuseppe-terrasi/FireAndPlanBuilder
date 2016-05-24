@@ -127,6 +127,7 @@ namespace Fire_and_Plan_Builder_V2
             #endregion
 
             FillComboBoxes();
+            LoadPanelSection("AIB");
         }
 
         private SceneryObject GetSceneryObjectFromComboBox(ref ComboBox cb)
@@ -899,6 +900,71 @@ namespace Fire_and_Plan_Builder_V2
                     aircaftIdTB.Text = "IDPC";
                     routeTB.Text = @"RMK/OAT/FERRY REG/IDPC[xxx] OPR/ITVVF //WWW CANADAIRVIRTUAL ORG//";
                     break;
+            }
+        }
+
+        private void RBpianodivoloCheckedChange(object sender, EventArgs e)
+        {
+            if (rbADT.Checked)
+            {
+                LoadPanelSection("ADT");
+            }
+            if (rbADC.Checked)
+            {
+                LoadPanelSection("ADC");
+            }
+            if (rbADM.Checked)
+            {
+                LoadPanelSection("ADM");
+            }
+            if (rbADI.Checked)
+            {
+                LoadPanelSection("ADI");
+            }
+            if (rbADS.Checked)
+            {
+                LoadPanelSection("ADS");
+            }
+            if (rbAIB.Checked)
+            {
+                LoadPanelSection("AIB");
+            }
+            if (rbSAR.Checked)
+            {
+                LoadPanelSection("SAR");
+            }
+            if (rbRIC.Checked)
+            {
+                LoadPanelSection("RIC");
+            }
+            if (rbVCS.Checked)
+            {
+                LoadPanelSection("VCS");
+            }
+            if (rbLOG.Checked)
+            {
+                LoadPanelSection("LOG");
+            }
+            if (rbTRO.Checked)
+            {
+                LoadPanelSection("TRO");
+            }
+            if (rbTRM.Checked)
+            {
+                LoadPanelSection("TRM");
+            }
+            if (rbTEC.Checked)
+            {
+                LoadPanelSection("TEC");
+            }
+        }
+
+        private void pulisciBtn_Click(object sender, EventArgs e)
+        {
+            foreach(Control c in mainTabControl.TabPages[1].Controls)
+            {
+                if(c is TextBox || c is ComboBox)
+                    c.Text = "";
             }
         }
     }

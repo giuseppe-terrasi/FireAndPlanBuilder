@@ -82,6 +82,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tofCB = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rbTEC = new System.Windows.Forms.RadioButton();
             this.rbTRM = new System.Windows.Forms.RadioButton();
@@ -151,7 +152,6 @@
             this.aggiungiNuovoEffettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tofCB = new System.Windows.Forms.ComboBox();
             this.mainTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -818,6 +818,20 @@
             this.tabPage2.Text = "Piano di volo";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tofCB
+            // 
+            this.tofCB.FormattingEnabled = true;
+            this.tofCB.Items.AddRange(new object[] {
+            "S",
+            "N",
+            "G",
+            "M",
+            "X"});
+            this.tofCB.Location = new System.Drawing.Point(445, 70);
+            this.tofCB.Name = "tofCB";
+            this.tofCB.Size = new System.Drawing.Size(75, 21);
+            this.tofCB.TabIndex = 96;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.rbTEC);
@@ -847,6 +861,7 @@
             this.rbTEC.TabIndex = 13;
             this.rbTEC.Text = "TEC";
             this.rbTEC.UseVisualStyleBackColor = true;
+            this.rbTEC.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbTRM
             // 
@@ -857,6 +872,7 @@
             this.rbTRM.TabIndex = 12;
             this.rbTRM.Text = "TRM";
             this.rbTRM.UseVisualStyleBackColor = true;
+            this.rbTRM.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbTRO
             // 
@@ -867,6 +883,7 @@
             this.rbTRO.TabIndex = 11;
             this.rbTRO.Text = "TRO";
             this.rbTRO.UseVisualStyleBackColor = true;
+            this.rbTRO.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbLOG
             // 
@@ -877,6 +894,7 @@
             this.rbLOG.TabIndex = 10;
             this.rbLOG.Text = "LOG";
             this.rbLOG.UseVisualStyleBackColor = true;
+            this.rbLOG.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbRIC
             // 
@@ -887,6 +905,7 @@
             this.rbRIC.TabIndex = 9;
             this.rbRIC.Text = "RIC";
             this.rbRIC.UseVisualStyleBackColor = true;
+            this.rbRIC.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbVCS
             // 
@@ -897,6 +916,7 @@
             this.rbVCS.TabIndex = 8;
             this.rbVCS.Text = "VCS";
             this.rbVCS.UseVisualStyleBackColor = true;
+            this.rbVCS.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbAIB
             // 
@@ -909,6 +929,7 @@
             this.rbAIB.TabStop = true;
             this.rbAIB.Text = "AIB";
             this.rbAIB.UseVisualStyleBackColor = true;
+            this.rbAIB.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbSAR
             // 
@@ -919,6 +940,7 @@
             this.rbSAR.TabIndex = 6;
             this.rbSAR.Text = "SAR";
             this.rbSAR.UseVisualStyleBackColor = true;
+            this.rbSAR.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbADI
             // 
@@ -929,6 +951,7 @@
             this.rbADI.TabIndex = 5;
             this.rbADI.Text = "ADI";
             this.rbADI.UseVisualStyleBackColor = true;
+            this.rbADI.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbADS
             // 
@@ -939,6 +962,7 @@
             this.rbADS.TabIndex = 4;
             this.rbADS.Text = "ADS";
             this.rbADS.UseVisualStyleBackColor = true;
+            this.rbADS.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbADC
             // 
@@ -949,6 +973,7 @@
             this.rbADC.TabIndex = 3;
             this.rbADC.Text = "ADC";
             this.rbADC.UseVisualStyleBackColor = true;
+            this.rbADC.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbADM
             // 
@@ -959,6 +984,7 @@
             this.rbADM.TabIndex = 2;
             this.rbADM.Text = "ADM";
             this.rbADM.UseVisualStyleBackColor = true;
+            this.rbADM.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // rbADT
             // 
@@ -969,6 +995,7 @@
             this.rbADT.TabIndex = 1;
             this.rbADT.Text = "ADT";
             this.rbADT.UseVisualStyleBackColor = true;
+            this.rbADT.CheckedChanged += new System.EventHandler(this.RBpianodivoloCheckedChange);
             // 
             // inviaBtn
             // 
@@ -976,7 +1003,7 @@
             this.inviaBtn.Name = "inviaBtn";
             this.inviaBtn.Size = new System.Drawing.Size(75, 23);
             this.inviaBtn.TabIndex = 94;
-            this.inviaBtn.Text = "Invia";
+            this.inviaBtn.Text = "Crea";
             this.inviaBtn.UseVisualStyleBackColor = true;
             // 
             // pulisciBtn
@@ -987,6 +1014,7 @@
             this.pulisciBtn.TabIndex = 93;
             this.pulisciBtn.Text = "Pulisci";
             this.pulisciBtn.UseVisualStyleBackColor = true;
+            this.pulisciBtn.Click += new System.EventHandler(this.pulisciBtn_Click);
             // 
             // mtl2CB
             // 
@@ -1437,20 +1465,6 @@
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.infoToolStripMenuItem.Text = "Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
-            // 
-            // tofCB
-            // 
-            this.tofCB.FormattingEnabled = true;
-            this.tofCB.Items.AddRange(new object[] {
-            "S",
-            "N",
-            "G",
-            "M",
-            "X"});
-            this.tofCB.Location = new System.Drawing.Point(445, 70);
-            this.tofCB.Name = "tofCB";
-            this.tofCB.Size = new System.Drawing.Size(75, 21);
-            this.tofCB.TabIndex = 96;
             // 
             // Form1
             // 
