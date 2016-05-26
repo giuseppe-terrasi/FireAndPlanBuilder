@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <ElencoEffetti>
   <EffettiComboSingolo>
-    <Prova marker="gray_small">Prova</Prova>
-    <Fire marker="red">fx_ForestFire</Fire>
-    <Autocisterna marker="yellow">Autocisterna</Autocisterna>
+    <Prova name="Prova" marker="yellow">fx_Prova</Prova>
   </EffettiComboSingolo>
   <EffettiComboLinea>
-    <Prova marker="gray_small">Prova</Prova>
-    <Test marker="lightblue">Test</Test>
-    <Fire marker="red">fx_ForestFire</Fire>
-    <Autocisterna marker="yellow">Autocisterna</Autocisterna>
+    <Prova name="Prova" marker="yellow">fx_Prova</Prova>
   </EffettiComboLinea>
 </ElencoEffetti>

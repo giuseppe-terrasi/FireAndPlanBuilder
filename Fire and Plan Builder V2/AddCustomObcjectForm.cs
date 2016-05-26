@@ -65,7 +65,8 @@ namespace Fire_and_Plan_Builder_V2
                 {
                     XmlElement el = doc.CreateElement(typeTB.Text);
 
-                    el.InnerText = nameTB.Text;
+                    el.InnerText = valoreTB.Text;
+                    el.SetAttribute("name", nameTB.Text);
                     el.SetAttribute("marker", ColorMarkerCB.Text);
                     doc.GetElementsByTagName("EffettiComboSingolo")[0].AppendChild(el);
                     doc.Save(Application.StartupPath + Path.Combine(@"\Effetti\Effetti.xml"));
@@ -85,7 +86,8 @@ namespace Fire_and_Plan_Builder_V2
                 {
                     XmlElement el = doc.CreateElement(typeTB.Text);
 
-                    el.InnerText = nameTB.Text;
+                    el.InnerText = valoreTB.Text;
+                    el.SetAttribute("name", nameTB.Text);
                     el.SetAttribute("marker", ColorMarkerCB.Text);
                     doc.GetElementsByTagName("EffettiComboLinea")[0].AppendChild(el);
                     doc.Save(Application.StartupPath + Path.Combine(@"\Effetti\Effetti.xml"));
@@ -104,7 +106,8 @@ namespace Fire_and_Plan_Builder_V2
                 {
                     XmlElement el = doc.CreateElement(typeTB.Text);
 
-                    el.InnerText = nameTB.Text;
+                    el.InnerText = valoreTB.Text;
+                    el.SetAttribute("name", nameTB.Text);
                     el.SetAttribute("marker", ColorMarkerCB.Text);
                     doc.GetElementsByTagName("EffettiComboSingolo")[0].AppendChild(el);
                     doc.Save(Application.StartupPath + Path.Combine(@"\Effetti\Effetti.xml"));
@@ -120,7 +123,8 @@ namespace Fire_and_Plan_Builder_V2
                 {
                     XmlElement el = doc.CreateElement(typeTB.Text);
 
-                    el.InnerText = nameTB.Text;
+                    el.InnerText = valoreTB.Text;
+                    el.SetAttribute("name", nameTB.Text);
                     el.SetAttribute("marker", ColorMarkerCB.Text);
                     doc.GetElementsByTagName("EffettiComboLinea")[0].AppendChild(el);
                     doc.Save(Application.StartupPath + Path.Combine(@"\Effetti\Effetti.xml"));

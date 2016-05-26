@@ -27,12 +27,14 @@ namespace Fire_and_Plan_Builder_V2
             public string type;
             public string name;
             public string markerColor;
+            public string value;
 
-            public ComboElement(string _type,string _name, string _markerColor)
+            public ComboElement(string _type,string _name, string _markerColor,string _value)
             {
                 type = _type;
                 name = _name;
                 markerColor = _markerColor;
+                value = _value;
             }
 
             public override string ToString()
@@ -68,11 +70,11 @@ namespace Fire_and_Plan_Builder_V2
 
             foreach (XmlElement el in doc.GetElementsByTagName("EffettiComboSingolo")[0].ChildNodes)
             {
-                singoloEffettoCB.Items.Add(new ComboElement(el.LocalName, el.InnerText, el.Attributes[0].Value));
+                singoloEffettoCB.Items.Add(new ComboElement(el.LocalName,el.Attributes["name"].Value,el.Attributes["marker"].Value,el.InnerText));
             }
             foreach (XmlElement el in doc.GetElementsByTagName("EffettiComboLinea")[0].ChildNodes)
             {
-                lineaEffettoCB.Items.Add(new ComboElement(el.LocalName, el.InnerText, el.Attributes[0].Value));
+                lineaEffettoCB.Items.Add(new ComboElement(el.LocalName, el.Attributes["name"].Value, el.Attributes["marker"].Value, el.InnerText));
             }
 
         }
@@ -134,12 +136,12 @@ namespace Fire_and_Plan_Builder_V2
         {
             if(((ComboElement)cb.SelectedItem).type == "Fire")
             {
-                SceneryObject obj = new Fire(cb.Text, Convert.ToDouble(singoloLatTB.Text), Convert.ToDouble(singoloLonTB.Text));
+                SceneryObject obj = new Fire((cb.SelectedItem as ComboElement).value, Convert.ToDouble(singoloLatTB.Text), Convert.ToDouble(singoloLonTB.Text));
                 return obj;
             }
             else if (((ComboElement)cb.SelectedItem).type == "Smoke")
             {
-                SceneryObject obj = new Smoke(cb.Text, Convert.ToDouble(singoloLatTB.Text), Convert.ToDouble(singoloLonTB.Text));
+                SceneryObject obj = new Smoke((cb.SelectedItem as ComboElement).value, Convert.ToDouble(singoloLatTB.Text), Convert.ToDouble(singoloLonTB.Text));
                 return obj;
             }
             else if (((ComboElement)cb.SelectedItem).type == "Autocisterna")
@@ -149,7 +151,7 @@ namespace Fire_and_Plan_Builder_V2
             }
             else
             {
-                SceneryObject obj = new CustomObject(((ComboElement)cb.SelectedItem).type, ((ComboElement)cb.SelectedItem).name,
+                SceneryObject obj = new CustomObject(((ComboElement)cb.SelectedItem).type, ((ComboElement)cb.SelectedItem).value,
                     Convert.ToDouble(singoloLatTB.Text), Convert.ToDouble(singoloLonTB.Text),
                     (GMarkerGoogleType) Enum.Parse(typeof(GMarkerGoogleType), ((ComboElement)cb.SelectedItem).markerColor));
                 return obj;
@@ -679,22 +681,22 @@ namespace Fire_and_Plan_Builder_V2
             switch (((ComboElement)lineaEffettoCB.SelectedItem).type)
             {
                 case "Fire":
-                    f1 = new Fire(((ComboElement)lineaEffettoCB.SelectedItem).name, lat1, lon1);
-                    f2 = new Fire(((ComboElement)lineaEffettoCB.SelectedItem).name, lat2, lon2);
+                    f1 = new Fire(((ComboElement)lineaEffettoCB.SelectedItem).value, lat1, lon1);
+                    f2 = new Fire(((ComboElement)lineaEffettoCB.SelectedItem).value, lat2, lon2);
                     break;
                 case "Smoke":
-                    f1 = new Smoke(((ComboElement)lineaEffettoCB.SelectedItem).name, lat1, lon1);
-                    f2 = new Smoke(((ComboElement)lineaEffettoCB.SelectedItem).name, lat2, lon2);
+                    f1 = new Smoke(((ComboElement)lineaEffettoCB.SelectedItem).value, lat1, lon1);
+                    f2 = new Smoke(((ComboElement)lineaEffettoCB.SelectedItem).value, lat2, lon2);
                     break;
                 case "Autocisterna":
                     f1 = new Autocisterna(lat1, lon1);
                     f2 = new Autocisterna(lat2, lon2);
                     break;
                 default:
-                    f1 = new CustomObject(((ComboElement)lineaEffettoCB.SelectedItem).type, ((ComboElement)lineaEffettoCB.SelectedItem).name, lat1, lon1,
+                    f1 = new CustomObject(((ComboElement)lineaEffettoCB.SelectedItem).type, ((ComboElement)lineaEffettoCB.SelectedItem).value, lat1, lon1,
                         (GMarkerGoogleType) Enum.Parse(typeof(GMarkerGoogleType), ((ComboElement)lineaEffettoCB.SelectedItem).markerColor)
                         );
-                    f2 = new CustomObject(((ComboElement)lineaEffettoCB.SelectedItem).type, ((ComboElement)lineaEffettoCB.SelectedItem).name, lat2, lon2,
+                    f2 = new CustomObject(((ComboElement)lineaEffettoCB.SelectedItem).type, ((ComboElement)lineaEffettoCB.SelectedItem).value, lat2, lon2,
                         (GMarkerGoogleType)Enum.Parse(typeof(GMarkerGoogleType), ((ComboElement)lineaEffettoCB.SelectedItem).markerColor)
                         );
                     break;
