@@ -2,8 +2,12 @@
 <ElencoEffetti>
   <EffettiComboSingolo>
     <Prova name="Prova" marker="yellow">fx_Prova</Prova>
+    <Fire name="Fuoco" marker="red">fx_forestFire</Fire>
+    <Pippo name="Personal" marker="orange">fx_personal</Pippo>
   </EffettiComboSingolo>
   <EffettiComboLinea>
     <Prova name="Prova" marker="yellow">fx_Prova</Prova>
+    <Fire name="Fuoco" marker="red">fx_forestFire</Fire>
+    <Pippo name="Personal" marker="orange">fx_personal</Pippo>
   </EffettiComboLinea>
 </ElencoEffetti>

@@ -23,6 +23,8 @@ namespace Fire_and_Plan_Builder_V2
         {
             InitializeComponent();
             ColorMarkerCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            ColorMarkerCB.Enabled = false;
+            tipoCB.DropDownStyle = ComboBoxStyle.DropDownList;
             Array a = Enum.GetValues(typeof(GMarkerGoogleType));
 
             _SingoloItems = SingoloItems;
@@ -42,7 +44,9 @@ namespace Fire_and_Plan_Builder_V2
 
         private void TextBoxTextChanged(object sender, EventArgs e)
         {
-            if(nameTB.Text != "" && typeTB.Text != "" && ColorMarkerCB.SelectedIndex != -1 && (singoloRB.Checked || lineaRB.Checked || entrambiRB.Checked))
+            if(nameTB.Text != "" && tipoCB.SelectedIndex  != -1 && ColorMarkerCB.SelectedIndex != -1 
+               && (singoloRB.Checked || lineaRB.Checked || entrambiRB.Checked) && 
+               (tipoCB.SelectedIndex == 3 && typeTB.Text !=""))
             {
                 btnAggiungi.Enabled = true;
             }
@@ -239,6 +243,33 @@ namespace Fire_and_Plan_Builder_V2
 
 
             doc.Save(Application.StartupPath + Path.Combine(@"\Effetti\Effetti.xml"));
+        }
+
+        private void tipoCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tipoCB.SelectedIndex)
+            {
+                case 0 :
+                case 1 :
+                    ColorMarkerCB.SelectedItem = GMarkerGoogleType.red;
+                    ColorMarkerCB.Enabled = false;
+                    typeTB.Enabled = false;
+                    break;
+                case 2:
+                    ColorMarkerCB.SelectedItem = GMarkerGoogleType.yellow;
+                    ColorMarkerCB.Enabled = false;
+                    typeTB.Enabled = false;
+                    break;
+                case 3:
+                    ColorMarkerCB.Enabled = true;
+                    typeTB.Enabled = true;
+                    break;
+                default:
+                    ColorMarkerCB.Enabled = false;
+                    typeTB.Enabled = false;
+                    btnAggiungi.Enabled = false;
+                    break;
+            }
         }
     }
 }
