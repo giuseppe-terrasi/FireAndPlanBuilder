@@ -1,0 +1,12 @@
+-- Effetti combo singolo: --
+Autocisterna|Autocisterna
+Smoke|Smoke.fx
+Fire|forestFire.fx
+Fire|fire.fx
+Fire|fire2.fx
+Fire|testfire.fx
+-- Effetti combo linea: --
+Fire|forestFire.fx
+Fire|fire.fx
+Fire|fire2.fx
+Fire|testfire.fx
