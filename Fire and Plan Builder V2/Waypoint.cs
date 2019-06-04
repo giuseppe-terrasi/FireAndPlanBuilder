@@ -29,8 +29,8 @@ namespace Fire_and_Plan_Builder_V2
                     doc.Load(path);
                     XmlElement newWaypoint = doc.CreateElement("Waypoint");
 
-                    newWaypoint.SetAttribute("lat", lat.ToString().Replace(",", "."));
-                    newWaypoint.SetAttribute("lon", lon.ToString().Replace(",", "."));
+                    newWaypoint.SetAttribute("lat", GetXmlStringLat());
+                    newWaypoint.SetAttribute("lon", GetXmlStringLon());
                     newWaypoint.SetAttribute("waypointType", "NAMED");
                     newWaypoint.SetAttribute("magvar", "4.0");
                     newWaypoint.SetAttribute("waypointRegion", "LI");
@@ -52,10 +52,7 @@ namespace Fire_and_Plan_Builder_V2
                 return false;
             }
         }
-        public override string ToString()
-        {
-            return name + ": " + lat.ToString() + "," + lon.ToString();
-        }
+
         public override bool RemoveFromXml(string path)
         {
             if (IsAddedToXml)
@@ -67,7 +64,7 @@ namespace Fire_and_Plan_Builder_V2
 
                     foreach (XmlElement el in xDoc.SelectNodes("FSData/Waypoint"))
                     {
-                        if (el.Attributes[0].Value == lat.ToString().Replace(",", ".") && el.Attributes[1].Value == lon.ToString().Replace(",", "."))
+                        if (el.Attributes[0].Value == GetXmlStringLat() && el.Attributes[1].Value == GetXmlStringLon())
                         {
                             el.ParentNode.RemoveChild(el);
                             break;

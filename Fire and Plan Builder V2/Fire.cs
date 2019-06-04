@@ -31,8 +31,8 @@ namespace Fire_and_Plan_Builder_V2
 
                     XmlElement newSceneryObject = doc.CreateElement("SceneryObject");
 
-                    newSceneryObject.SetAttribute("lat", lat.ToString().Replace(",", "."));
-                    newSceneryObject.SetAttribute("lon", lon.ToString().Replace(",", "."));
+                    newSceneryObject.SetAttribute("lat", GetXmlStringLat());
+                    newSceneryObject.SetAttribute("lon", GetXmlStringLon());
                     newSceneryObject.SetAttribute("alt", "0");
                     newSceneryObject.SetAttribute("pitch", "0");
                     newSceneryObject.SetAttribute("bank", "0");
@@ -62,11 +62,6 @@ namespace Fire_and_Plan_Builder_V2
             }
         }
 
-        public override string ToString()
-        {
-            return name +": " + lat.ToString() + "," + lon.ToString();
-        }
-
         public override bool RemoveFromXml(string path)
         {
             if (IsAddedToXml)
@@ -78,7 +73,7 @@ namespace Fire_and_Plan_Builder_V2
 
                     foreach (XmlElement el in xDoc.SelectNodes("FSData/SceneryObject"))
                     {
-                        if (el.Attributes[0].Value == lat.ToString().Replace(",", ".") && el.Attributes[1].Value == lon.ToString().Replace(",", "."))
+                        if (el.Attributes[0].Value == GetXmlStringLat() && el.Attributes[1].Value == GetXmlStringLon())
                         {
                             el.ParentNode.RemoveChild(el);
                             IsAddedToXml = false;

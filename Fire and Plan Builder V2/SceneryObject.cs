@@ -7,6 +7,7 @@ using System.Xml;
 using GMap.NET;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms;
+using System.Globalization;
 
 namespace Fire_and_Plan_Builder_V2
 {
@@ -64,7 +65,10 @@ namespace Fire_and_Plan_Builder_V2
         {
             overlay.Markers.Remove(marker);
         }
-        abstract public override string ToString();
+        public override string ToString()
+        {
+            return Nome + ": " + GetXmlStringLat() + "," + GetXmlStringLon();
+        }
         public bool ContainsMarker(GMarkerGoogle marker)
         {
             if (this.marker == marker) return true;
@@ -76,5 +80,17 @@ namespace Fire_and_Plan_Builder_V2
         }
 
         abstract public SceneryObject Clone();
+
+        public string GetXmlStringLat()
+        {
+            return lat.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public string GetXmlStringLon()
+        {
+            return lon.ToString(CultureInfo.InvariantCulture);
+        }
+
+        
     }
  }

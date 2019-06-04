@@ -15,6 +15,7 @@ using System.Xml;
 using System.Diagnostics;
 using System.IO;
 using System.Xml.Linq;
+using System.Globalization;
 
 namespace Fire_and_Plan_Builder_V2
 {
@@ -408,8 +409,8 @@ namespace Fire_and_Plan_Builder_V2
 
                 foreach (XmlElement el in Makefire.doc.GetElementsByTagName("SceneryObject"))
                 {
-                    lat = Convert.ToDouble(el.Attributes["lat"].InnerText.Replace(".",","));
-                    lon = Convert.ToDouble(el.Attributes["lon"].InnerText.Replace(".",","));
+                    lat = Convert.ToDouble(el.Attributes["lat"], CultureInfo.InvariantCulture);
+                    lon = Convert.ToDouble(el.Attributes["lon"], CultureInfo.InvariantCulture);
 
                     if (el.FirstChild.Name == "Effect")
                     {
@@ -479,8 +480,8 @@ namespace Fire_and_Plan_Builder_V2
 
                 foreach (XmlElement el in Makefire.doc.GetElementsByTagName("Waypoint"))
                 {
-                    lat = Convert.ToDouble(el.Attributes["lat"].InnerText.Replace(".", ","));
-                    lon = Convert.ToDouble(el.Attributes["lon"].InnerText.Replace(".", ","));
+                    lat = Convert.ToDouble(el.Attributes["lat"].InnerText, CultureInfo.InvariantCulture);
+                    lon = Convert.ToDouble(el.Attributes["lon"].InnerText, CultureInfo.InvariantCulture);
                     n = new Waypoint(lat, lon);
                   
                     n.AddMarkerToMap(ref markerOverlay);
